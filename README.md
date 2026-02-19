@@ -29,7 +29,7 @@ La plataforma permite a los usuarios generar gráficos interactivos y realizar a
 
 ### Predicciones de Machine Learning
 <div align="center">
-  <img src="src/ML.png" alt="Machine Learning" width="500"/>
+  <img src="src/ML2.png" alt="Machine Learning" width="500"/>
 </div>
 
 ### Apis para consumo externo
