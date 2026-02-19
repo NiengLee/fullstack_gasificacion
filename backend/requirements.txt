@@ -1,0 +1,15 @@
+fastapi
+numpy
+scipy
+sympy
+pandas
+polars
+matplotlib
+seaborn
+bokeh
+PyALE
+joblib
+uvicorn
+gunicorn
+pydantic-settings
+scikit-learn==1.7.1

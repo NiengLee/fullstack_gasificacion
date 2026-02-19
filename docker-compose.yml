@@ -1,0 +1,42 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gasification-backend
+    restart: unless-stopped
+    env_file:
+      - backend/.env
+    ports:
+      - "8090:8000"
+    volumes:
+      - ./backend:/app:rw
+    command: [
+      "uvicorn","app.main:app",
+      "--host","0.0.0.0","--port","8000",
+      "--reload","--reload-dir","/app",
+      "--reload-exclude",".git/*",
+      "--reload-exclude","__pycache__/*",
+      "--reload-exclude",".venv/*"
+    ]
+    environment:
+      WATCHFILES_FORCE_POLLING: "true"
+
+  
+  frontend:
+    image: node:22.12.0-alpine
+    working_dir: /app
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - node_modules:/app/node_modules
+      - npm-cache:/root/.npm
+    environment:
+      - CHOKIDAR_USEPOLLING=1
+    command: sh -lc "npm i --no-audit --no-fund && npx vite --host 0.0.0.0 --port 5173"
+    restart: unless-stopped
+
+volumes:
+  node_modules:
+  npm-cache:
