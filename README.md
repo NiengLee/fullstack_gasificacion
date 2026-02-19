@@ -32,6 +32,11 @@ La plataforma permite a los usuarios generar gráficos interactivos y realizar a
   <img src="src/ML.png" alt="Machine Learning" width="500"/>
 </div>
 
+### Apis para consumo externo
+<div align="center">
+  <img src="src/Fastapi.png" alt="Machine Learning" width="500"/>
+</div>
+
 ## Impacto y motivación
 
 El proyecto se enmarca en la promoción de **energías alternativas y procesos amigables con el medio ambiente**, demostrando cómo la combinación de ciencia de datos, Machine Learning y herramientas web modernas puede **optimizar la investigación y la toma de decisiones en procesos sostenibles**.
@@ -63,3 +68,6 @@ El proyecto se enmarca en la promoción de **energías alternativas y procesos a
     ```bash
     docker-compose up --build
     ```
+   
+2. Si desea ingresar a la documentación de API's del backend:
+   Entrar a este hipervinculo despues de montar el contenedor docker: `http://localhost:8090/docs`
